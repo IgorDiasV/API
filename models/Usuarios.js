@@ -1,6 +1,6 @@
 const db = require('./db')
 
-const Post = db.sequelize.define('usuario',{
+const Usuarios = db.sequelize.define('usuarios',{
     CPF:{
         type: db.Sequelize.INTEGER,
         primaryKey: true
@@ -21,4 +21,4 @@ const Post = db.sequelize.define('usuario',{
 
 //Post.sync({force:true})
 
-module.exports = Post
+module.exports = Usuarios

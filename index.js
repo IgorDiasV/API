@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
-const Post = require('./models/Post')
+const Usuarios = require('./models/Usuarios')
 
 //Config
     //Template Engine
@@ -17,7 +17,7 @@ const Post = require('./models/Post')
         res.render('home')
     })
     app.post('/addUser',function(req,res){
-        Post.create({
+        Usuarios.create({
             CPF:req.body.cpf,
             p_nome:req.body.p_nome,
             sobrenome:req.body.s_nome,
@@ -37,6 +37,26 @@ const Post = require('./models/Post')
     app.get('/cadUser', function(req,res){
         res.render('cadUser')
     })
+    app.get('/cadMoto', function(req,res){
+        res.render('cadMotorista')
+    })
+    /*
+    app.post('/addMoto', function(req,res){
+        Usuarios.create({
+            CPF:req.body.cpf,
+            p_nome:req.body.p_nome,
+            sobrenome:req.body.s_nome,
+            email:req.body.email,
+            Avaliacao:req.body.avaliacao
+        }).then(function()
+        {
+           res.redirect('/')
+        }).catch(function(erro)
+        {
+            console("ocorreu o seguinte erro: "+erro)
+        })
+    })
+    */
 
 app.listen(12000, function(){
     console.log("Servidor rodando na url http://localhost:12000");
