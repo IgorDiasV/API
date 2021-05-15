@@ -1,35 +1,41 @@
 <style>
-body{
-  background:black;
-}
-#cadastroUsuario{
-  display:block;
-  background:white;
-  width:300px;
-  background:Lightgray;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  border-radius: 10px 20px;
-  transform: translateY(-50%) translateX(-50%)
-}
-#cadastroUsuario > h2{
- text-align:center;
-}
-div{
-   text-align:center;
-}
-p{
-   text-align:left;
-   margin-left:62px;
-   padding:0;
-  margin-bottom:0;
-}
-button{
-  margin-top:15px;
-  margin-bottom:15px;
- }
+  body {
+    background: black;
+  }
+
+  #cadastroUsuario {
+    display: block;
+    background: white;
+    width: 300px;
+    background: Lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px 20px;
+    transform: translateY(-50%) translateX(-50%)
+  }
+
+  #cadastroUsuario>h2 {
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+    margin-left: 62px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 </style>
+
 <form action="/addUser" method="POST" id="cadastroUsuario">
   <h2>Cadastrar usuario</h2>  
   <div>
