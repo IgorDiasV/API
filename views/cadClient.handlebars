@@ -1,4 +1,42 @@
-<form action="/addUser" method="POST" id="cadastroUsuario">
+<style>
+  body {
+    background: black;
+  }
+
+  #cadastroCliente{
+    display: block;
+    background: white;
+    width: 300px;
+    background: Lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px 20px;
+    transform: translateY(-50%) translateX(-50%)
+  }
+
+  #cadastroCliente>h2 {
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+    margin-left: 62px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+</style>
+
+<form action="/addClient" method="POST" id="cadastroCliente">
   <h2>Cadastrar cliente</h2>  
   <div>
     <p>CPF:</p>

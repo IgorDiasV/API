@@ -1,11 +1,52 @@
-<form action="/addMoto" method="POST">
-    <p>CPF:</p>
-        <input type="number" name='cpf'></input>
-    <p>Quantidade de viagens:</p>
-        <input type="text" name='qt_viagens'></input>
-    <p>Taxa de aceitações:</p>
-        <input type="text" name='taxa_aceitacao'></input>        
-    <p>Taxa de rejeições:</p>
-        <input type="text" name='taxa_rejeicao'></input>
-    <button type="submit">Confirmar</button>
+<style>
+  body {
+    background: black;
+  }
+
+  #cadastroMotorista{
+    display: block;
+    background: white;
+    width: 300px;
+    background: Lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px 20px;
+    transform: translateY(-50%) translateX(-50%)
+  }
+
+  #cadastroMotorista>h2 {
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+    margin-left: 62px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+</style>
+
+<form action="/addMoto" method="POST" id="cadastroMotorista">
+    <div>
+        <h2>Cadastro motorista</h2>
+        <p>CPF:</p>
+            <input type="number" name='cpf'></input>
+        <p>Quantidade de viagens:</p>
+            <input type="text" name='qt_viagens'></input>
+        <p>Taxa de aceitações:</p>
+            <input type="text" name='taxa_aceitacao'></input>        
+        <p>Taxa de rejeições:</p>
+            <input type="text" name='taxa_rejeicao'></input></br>
+        <button type="submit">Confirmar</button>
+    </div>
 </form>

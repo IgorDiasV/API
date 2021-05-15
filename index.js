@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Usuarios = require('./models/Usuarios')
 const Cliente = require('./models/clientes');
+const Motorista = require('./models/motoristas')
 
 //Config
     //Template Engine
@@ -38,15 +39,30 @@ const Cliente = require('./models/clientes');
     app.get('/cadUser', function(req,res){
         res.render('cadUser')
     })
-    app.get('/cadMoto', function(req,res){
-        res.render('cadMotorista')
-    })
     app.get('/cadClient', function(req,res){
         res.render('cadClient')
     })
     app.post('/addClient', function(req,res){
         Cliente.create({
-            c_cpf:req.body.cpf,
+            c_cpf:req.body.cpf
+        }).then(function()
+        {
+           res.redirect('/')
+        }).catch(function(erro)
+        {
+            console.log("ocorreu o seguinte erro: "+erro)
+        })
+    }) 
+    app.get('/cadMoto', function(req,res){
+        res.render('cadMotorista')
+    })
+    
+    app.post('/addMoto', function(req,res){
+        Motorista.create({
+            m_cpf:req.body.cpf,
+            Qt_viagem:req.body.qt_viagens,
+            Taxa_aceitacao:req.body.taxa_aceitacao,
+            Taxa_cancelamento:req.body.taxa_rejeicao,
         }).then(function()
         {
            res.redirect('/')
@@ -55,23 +71,7 @@ const Cliente = require('./models/clientes');
             console.log("ocorreu o seguinte erro: "+erro)
         })
     })
-    /*
-    app.post('/addMoto', function(req,res){
-        Usuarios.create({
-            CPF:req.body.cpf,
-            p_nome:req.body.p_nome,
-            sobrenome:req.body.s_nome,
-            email:req.body.email,
-            Avaliacao:req.body.avaliacao
-        }).then(function()
-        {
-           res.redirect('/')
-        }).catch(function(erro)
-        {
-            console("ocorreu o seguinte erro: "+erro)
-        })
-    })
-    */
+    
 
 app.listen(12000, function(){
     console.log("Servidor rodando na url http://localhost:12000");
