@@ -3,6 +3,7 @@ const app = express();
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Usuarios = require('./models/Usuarios')
+const Cliente = require('./models/clientes');
 
 //Config
     //Template Engine
@@ -28,7 +29,7 @@ const Usuarios = require('./models/Usuarios')
            res.redirect('/')
         }).catch(function(erro)
         {
-            console("ocorreu o seguinte erro: "+erro)
+            console.log("ocorreu o seguinte erro: "+erro)
         })
     })
     app.get('/cadastrar', function(req,res){
@@ -39,6 +40,20 @@ const Usuarios = require('./models/Usuarios')
     })
     app.get('/cadMoto', function(req,res){
         res.render('cadMotorista')
+    })
+    app.get('/cadClient', function(req,res){
+        res.render('cadClient')
+    })
+    app.post('/addClient', function(req,res){
+        Cliente.create({
+            c_cpf:req.body.cpf,
+        }).then(function()
+        {
+           res.redirect('/')
+        }).catch(function(erro)
+        {
+            console.log("ocorreu o seguinte erro: "+erro)
+        })
     })
     /*
     app.post('/addMoto', function(req,res){
