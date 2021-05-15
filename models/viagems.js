@@ -3,7 +3,8 @@ const db = require('./db')
 const viagems = db.sequelize.define('viagems',{
     id_viagem:{
         type: db.Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     id_cliente: {
         type: Sequelize.INTEGER,

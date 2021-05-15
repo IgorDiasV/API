@@ -1,0 +1,52 @@
+<style>
+body{
+  background:black;
+}
+#cadastrarViagem{
+  display:block;
+  background:white;
+  width:300px;
+  background:Lightgray;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  border-radius: 10px 20px;
+  transform: translateY(-50%) translateX(-50%)
+}
+#cadastrarViagem > h2{
+ text-align:center;
+}
+div{
+   text-align:center;
+}
+p{
+   text-align:left;
+   margin-left:62px;
+   padding:0;
+  margin-bottom:0;
+}
+button{
+  margin-top:15px;
+  margin-bottom:15px;
+ }
+</style>
+<form action="/addUser" method="POST" id="cadastrarViagem">
+  <h2>Cadastrar usuario</h2>  
+  <div>
+  <p>CPF Cliente:</p>
+  <input type="number" name='c_cpf'></input>
+  <p>CPF motorista:</p>
+  <input type="number" name='m_cpf'></input>
+  <p>Avaliação motorista:</p>
+  <input type="number" name='m_avl' step="0.1"></input>
+  <p>Avaliação cliente:</p>
+  <input type="number" name='c_avl' step="0.1"></input>
+  <p>Destino:</p>
+  <input type="text" name='destino'></input>
+  <p>Origem:</p>
+  <input type="text" name='origem'></input>        
+  <p>Valor:</p>
+  <input type="number" name='valor' step="0.1"></input></br>
+  <button type="submit">Cadastrar</button>
+</div>
+</form>
