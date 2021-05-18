@@ -30,7 +30,7 @@ button{
   margin-bottom:15px;
  }
 </style>
-<form action="/addUser" method="POST" id="cadastrarViagem">
+<form action="/addViagem" method="POST" id="cadastrarViagem">
   <h2>Cadastrar usuario</h2>  
   <div>
   <p>CPF Cliente:</p>
@@ -46,7 +46,9 @@ button{
   <p>Origem:</p>
   <input type="text" name='origem'></input>        
   <p>Valor:</p>
-  <input type="number" name='valor' step="0.1"></input></br>
+  <input type="number" name='valor' step="0.1"></input>
+  <p>Tipo viagem:</p>
+  <input type="text" name='tipo_viagem'></input></br>
   <button type="submit">Cadastrar</button>
 </div>
 </form>

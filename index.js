@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const Usuarios = require('./models/Usuarios')
 const Cliente = require('./models/clientes');
 const Motorista = require('./models/motoristas')
+const Viagem = require('./models/viagems')
 
 //Config
     //Template Engine
@@ -63,6 +64,29 @@ const Motorista = require('./models/motoristas')
             Qt_viagem:req.body.qt_viagens,
             Taxa_aceitacao:req.body.taxa_aceitacao,
             Taxa_cancelamento:req.body.taxa_rejeicao,
+        }).then(function()
+        {
+           res.redirect('/')
+        }).catch(function(erro)
+        {
+            console.log("ocorreu o seguinte erro: "+erro)
+        })
+    })
+
+    app.get('/cadViagems', function(req,res){
+        res.render('cadViagems')
+    })
+    app.post('/addViagem', function(req,res){
+        Viagem.create({
+            id_cliente:req.body.c_cpf,
+            id_motorista:req.body.m_cpf,
+            avaliacao_motorista:req.body.m_avl,
+            avaliacao_cliente:req.body.c_avl,
+            destino:req.body.destino,
+            origem:req.body.origem,
+            valor:req.body.valor,
+            tipo_viagem:req.body.tipo_viagem
+
         }).then(function()
         {
            res.redirect('/')

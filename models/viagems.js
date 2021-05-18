@@ -1,13 +1,13 @@
 const db = require('./db')
 
-const viagems = db.sequelize.define('viagems',{
+const viagems = db.sequelize.define('viagens',{
     id_viagem:{
         type: db.Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     id_cliente: {
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
         allowNull: false,
         references: {         // User belongsTo Company 1:1
           model: 'clientes',
@@ -15,7 +15,7 @@ const viagems = db.sequelize.define('viagems',{
         }
     },
     id_motorista: {
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
         allowNull: false,
         references: {         // User belongsTo Company 1:1
           model: 'motoristas',
