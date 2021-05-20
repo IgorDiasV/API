@@ -95,8 +95,9 @@ const Viagem = require('./models/viagems')
             console.log("ocorreu o seguinte erro: "+erro)
         })
     })
-    
-
+    app.get('/busca', function(req,res){
+        res.render('busca')
+    })
 app.listen(12000, function(){
     console.log("Servidor rodando na url http://localhost:12000");
 })
