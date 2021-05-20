@@ -98,8 +98,8 @@ const Viagem = require('./models/viagems')
     app.get('/busca/:id',function(req,res)
 { 
    
-    Usuarios.findByPk(req.params.id).then(function(cpf){
-        res.render('busca',{cpf:cpf})
+    Usuarios.findByPk(req.params.id).then(function(usuario){
+        res.render('busca',{usuario:usuario})
     })
   
     
