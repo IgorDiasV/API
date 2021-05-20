@@ -41,7 +41,7 @@ label p{
   user-select: none;
   
   position: absolute;
-  top:50%;
+  top:45%;
   transform: translateY(-50%);
   
   margin-left: 0.8rem;
@@ -50,23 +50,40 @@ label p{
   background: #040404;
   transition: top 0.2s, font-size 0.2s, color 0.2s;
 }
-
 label input:focus +p,
 label input:not(:placeholder-shown) + p{
-  top:30px;
+  top:45px;
   font-size: 1rem;
   color: #2aa6ee;
 }
-
 label input:not(:focus) + p{
-  color:#7a7a7a56;
+  color:#7a7a7a;
 }
+h2{
+  color:#7a7a7a;
+}
+button{
+  padding: 10px 20px;
+  border-radius: 0.2rem;
+  border: 0;
+  background-color: #2aa6ee;
+  cursor: pointer;
+  color: #FFF;
+  font-weight: bold;
+  transition: 200ms ease-in-out;
+  right:50px;
+  box-shadow: 0px 0px 8px rgb(0 0 0 / 10%), 0px 4px 4px rgb(0 0 0 / 4%);
+}
+button:hover{
+  background: #0069d9;
+}
+
 </style>
 <form action="/addClient" method="POST" id="cadastroCliente">
-  <h2>Cadastrar cliente</h2>  
-    <label>  
-      <input type="text" name='cpf' placeholder=" "></input>
-        <p>CPF</p>
-      </label></br>
-    <button type="submit">Cadastrar</button>
+  <h2>Cadastrar cliente</h2><br>
+  <label>  
+    <input type="text" name='cpf' autocomplete="off" placeholder=" "></input>
+      <p>CPF</p>
+  </label></br><br>
+  <button type="submit">Cadastrar</button>
 </form>
