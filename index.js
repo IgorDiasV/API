@@ -97,6 +97,7 @@ const Viagem = require('./models/viagems')
     })
     app.get('/busca/:id',function(req,res){ 
         Usuarios.findByPk(req.params.id).then(function(usuario){
+            console.log(usuario)
             res.render('busca',{usuario:usuario})
         })
     })

@@ -12,7 +12,7 @@
     </div>
 </form>
 
-{{#each usuario}}
+{{#usuario.dataValues}}
 <hr>
     <p>{{CPF}}</p>
     <p>{{p_nome}}</p>
@@ -20,7 +20,7 @@
     <p>{{email}}</p>
     <p>{{Avaliacao}}</p>
 </hr>
-{{/each}}
+{{/usuario.dataValues}}
 
 <script>
     function filtra(cpf)
