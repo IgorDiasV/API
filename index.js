@@ -95,15 +95,11 @@ const Viagem = require('./models/viagems')
             console.log("ocorreu o seguinte erro: "+erro)
         })
     })
-    app.get('/busca/:id',function(req,res)
-{ 
-   
-    Usuarios.findByPk(req.params.id).then(function(usuario){
-        res.render('busca',{usuario:usuario})
+    app.get('/busca/:id',function(req,res){ 
+        Usuarios.findByPk(req.params.id).then(function(usuario){
+            res.render('busca',{usuario:usuario})
+        })
     })
-  
-    
-})
 
 app.listen(12000, function(){
     console.log("Servidor rodando na url http://localhost:12000");

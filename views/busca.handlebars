@@ -1,0 +1,39 @@
+<style>
+    #busca{
+        display:flex;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+
+<form action="#" method="GET" id="busca" name="busca">
+    <div>
+        <input id="search_input" placeholder="Search">
+    </div>
+</form>
+
+{{#each usuario}}
+<hr>
+    <p>{{CPF}}</p>
+    <p>{{p_nome}}</p>
+    <p>{{sobrenome}}</p>
+    <p>{{email}}</p>
+    <p>{{Avaliacao}}</p>
+</hr>
+{{/each}}
+
+<script>
+    function filtra(cpf)
+    {   
+        document.busca.action='/busca/'+cpf;
+        document.busca.submit();
+    }
+    botao = document.createElement('button')
+    botao.innerHTML="filtrar";
+    input=document.getElementById("search_input")
+    botao.onclick=function()
+    {
+        filtra(input.value)
+    }
+    document.body.appendChild(botao)
+</script>
