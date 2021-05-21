@@ -51,7 +51,7 @@ const Viagem = require('./models/viagems')
            res.redirect('/')
         }).catch(function(erro)
         {
-            console.log("ocorreu o seguinte erro: "+erro)
+            res.render('mensagemDeErroCliente')
         })
     }) 
     app.get('/cadMoto', function(req,res){
@@ -69,7 +69,7 @@ const Viagem = require('./models/viagems')
            res.redirect('/')
         }).catch(function(erro)
         {
-            console.log("ocorreu o seguinte erro: "+erro)
+            res.render('mensagemDeErroMotorista')
         })
     })
 
@@ -92,7 +92,8 @@ const Viagem = require('./models/viagems')
            res.redirect('/')
         }).catch(function(erro)
         {
-            console.log("ocorreu o seguinte erro: "+erro)
+            res.render('mensagemDeErroViagem')
+            
         })
     })
     app.get('/busca/:id',function(req,res){ 

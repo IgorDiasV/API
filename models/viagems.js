@@ -1,6 +1,6 @@
 const db = require('./db')
 
-const viagems = db.sequelize.define('viagens',{
+const viagems = db.sequelize.define('viagems',{
     id_viagem:{
         type: db.Sequelize.INTEGER,
         primaryKey: true,
@@ -45,6 +45,6 @@ const viagems = db.sequelize.define('viagens',{
   
 });
 
-//Post.sync({force:true})
+//viagems.sync({force:true})
 
 module.exports = viagems

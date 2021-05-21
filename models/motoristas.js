@@ -21,6 +21,6 @@ const motoristas = db.sequelize.define('motoristas',{
     }
 });
 
-//Post.sync({force:true})
+//motoristas.sync({force:true})
 
 module.exports = motoristas
